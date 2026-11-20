@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#faf6e8">
+<meta name="robots" content="noindex, nofollow">
+<title>Ода нашей любви</title>
+<link rel="stylesheet" href="style.css">
+<script src="story.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <span class="monogram" aria-hidden="true">А</span>
+  <span class="wordmark">Ода нашей любви</span>
+</header>
+<main id="album">
+  <section class="intro" aria-labelledby="greeting">
+    <p class="eyebrow"><span></span> Для Ани <span></span></p>
+    <h1 id="greeting">С днём рождения,<br><em>моя любимая кошечка!</em></h1>
+    <figure class="intro-portrait">
+      <img src="media/anya-portrait.webp" alt="Рисованный портрет Ани" fetchpriority="high">
+    </figure>
+    <p class="intro-letter">Я написал свою оду нашей любви, то, какой я видел тебя и нас весь этот год, старался вспомнить всё, что мы прошли вместе. Получилась целая история. Здесь не только о позитиве, но и препятствиях, недопониманиях. В общем, всё, что включает в себя любовь и страсть. Я люблю тебя и бесконечно дорожу. Ты удивительная, спасибо тебе за тебя!</p>
+    <p class="intro-copy">Ноябрь 2025 — ноябрь 2026</p>
+  </section>
+  <section class="chapters" aria-labelledby="chapter-heading">
+    <div class="chapter-heading">
+      <h2 id="chapter-heading">Месяцы</h2>
+      <output id="position" aria-live="polite"></output>
+    </div>
+    <div class="rail" id="rail" aria-label="Листай месяцы" tabindex="0"></div>
+    <div class="chapter-controls">
+      <button id="previous" class="round chevron left" type="button" aria-label="Предыдущий месяц"></button>
+      <div class="dots" id="dots" aria-label="Выбор месяца"></div>
+      <button id="next" class="round chevron" type="button" aria-label="Следующий месяц"></button>
+    </div>
+  </section>
+</main>
+<main id="chapter" hidden>
+  <div class="chapter-toolbar">
+    <button id="back" class="back" type="button">К выбору месяца</button>
+    <button id="mute" type="button" aria-label="Выключить музыку" aria-pressed="false">MUTE</button>
+  </div>
+  <article>
+    <header class="chapter-opening">
+      <div class="chapter-title">
+        <p id="chapter-date" class="eyebrow"></p>
+        <h1 id="month-title" tabindex="-1"></h1>
+        <p id="chapter-motif"></p>
+      </div>
+      <div class="chapter-keepsake" id="chapter-keepsake" aria-hidden="true"></div>
+    </header>
+    <div id="letter" class="letter"></div>
+    <section id="easter-eggs" class="easter-eggs" aria-label="Пасхалки" hidden></section>
+    <section class="memories" aria-labelledby="memories-title">
+      <h2 id="memories-title">В кадре</h2>
+      <div id="gallery" class="gallery"></div>
+    </section>
+    <details id="bonus-panel" class="bonus-panel" hidden>
+      <summary><span>Бонус</span><span class="open-label">Открыть</span></summary>
+      <div id="bonus-gallery" class="gallery"></div>
+    </details>
+    <div class="chapter-end">
+      <button id="back-end" class="back" type="button">К выбору месяца</button>
+    </div>
+  </article>
+</main>
+<dialog id="viewer" aria-label="Просмотр галереи">
+  <div class="viewer-bar">
+    <span id="media-count"></span>
+    <div id="viewer-download" class="download-slot"></div>
+    <button id="close-viewer" class="round close" type="button" aria-label="Закрыть просмотр">×</button>
+  </div>
+  <div class="viewer-stage" id="stage"></div>
+  <div class="viewer-footer">
+    <button id="prev-media" class="round chevron left" type="button" aria-label="Предыдущее фото или видео"></button>
+    <div class="viewer-info">
+      <p id="caption" hidden></p>
+      <div class="zoom-controls" id="zoom-controls" aria-label="Масштаб фотографии">
+        <button id="zoom-out" type="button" class="round" aria-label="Отдалить">−</button>
+        <button id="zoom-in" type="button" class="round" aria-label="Приблизить">+</button>
+      </div>
+    </div>
+    <button id="next-media" class="round chevron" type="button" aria-label="Следующее фото или видео"></button>
+  </div>
+</dialog>
+<audio id="music" loop preload="none"></audio>
+</body>
+</html>
